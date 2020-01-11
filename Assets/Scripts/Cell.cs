@@ -28,21 +28,36 @@ public class Cell : MonoBehaviour
         {
             _boardManager.ResetCells(color);
             _boardManager.player.ink = inkColors.blue;
+            _boardManager.startingCell = this;
         }
         else
         {
             _boardManager.ResetCells(color);
             _boardManager.player.ink = inkColors.red;
+            _boardManager.startingCell = this;
         }
     }
 
     void OnMouseUp()
     {
+        if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.red && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.red)
+        {
+            _boardManager.redConnection = true;
+            _boardManager.CheckSolution();
+        }
+        else if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.blue && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.blue)
+        {
+            _boardManager.blueConnection = true;
+            _boardManager.CheckSolution();
+        }
+
         _boardManager.player.ink = inkColors.none;
     }
 
     void OnMouseEnter()
     {
+        _boardManager.currentCell = this;
+
         if (!isEmpty)
             return;
 
@@ -51,8 +66,8 @@ public class Cell : MonoBehaviour
         else if (_boardManager.player.ink == inkColors.red)
             color = colors.red;
 
-        SwitchColor();
-    }
+        SwitchColor();        
+    }    
 
     public void SwitchColor()
     {
@@ -67,6 +82,6 @@ public class Cell : MonoBehaviour
             case colors.none:
                 _spriteRenderer.color = Color.grey;
                 break;
-        }
+        }        
     }
 }

@@ -11,6 +11,17 @@ public class BoardManager : MonoBehaviour
 
     public Cell[] cells;
 
+    [HideInInspector]
+    public Cell startingCell;
+    [HideInInspector]
+    public Cell currentCell;
+
+    public bool redConnection = false;
+    public bool blueConnection = false;
+    public bool levelDone = false;
+
+    public GameObject levelClearedPanel;
+
     void Start()
     {
         player = FindObjectOfType<Player>();
@@ -29,6 +40,7 @@ public class BoardManager : MonoBehaviour
             {
                 if (cells[i].isEmpty && cells[i].color == colors.red)
                 {
+                    redConnection = false;
                     cells[i].color = colors.none;
                     cells[i].SwitchColor();
                 }
@@ -37,10 +49,24 @@ public class BoardManager : MonoBehaviour
             {
                 if (cells[i].isEmpty && cells[i].color == colors.blue)
                 {
+                    blueConnection = false;
                     cells[i].color = colors.none;
                     cells[i].SwitchColor();
                 }
             }
+        }
+    }
+
+    public void CheckSolution()
+    {
+        if (redConnection && blueConnection)
+        {
+            for (int i = 0; i < cells.Length; i++)
+            {
+                cells[i].GetComponent<BoxCollider2D>().enabled = false;
+            }
+            levelDone = true;
+            levelClearedPanel.SetActive(true);
         }
     }
 }
