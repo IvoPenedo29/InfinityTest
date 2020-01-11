@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     public colors color;
 
     private SpriteRenderer _spriteRenderer;
-    private BoardManager _boardManager;
+    private BoardManager _boardManager;    
 
     void Awake()
     {
@@ -40,17 +40,6 @@ public class Cell : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.red && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.red)
-        {
-            _boardManager.redConnection = true;
-            _boardManager.CheckSolution();
-        }
-        else if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.blue && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.blue)
-        {
-            _boardManager.blueConnection = true;
-            _boardManager.CheckSolution();
-        }
-
         _boardManager.player.ink = inkColors.none;
     }
 
@@ -58,8 +47,32 @@ public class Cell : MonoBehaviour
     {
         _boardManager.currentCell = this;
 
+        if (_boardManager.currentCell.color == colors.red && _boardManager.player.ink == inkColors.blue)
+            _boardManager.redConnection = false;
+        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.ink == inkColors.red)
+            _boardManager.blueConnection = false;        
+
         if (!isEmpty)
-            return;
+        {
+            if (!(_boardManager.currentCell.color == colors.red && _boardManager.player.ink == inkColors.red || _boardManager.currentCell.color == colors.blue && _boardManager.player.ink == inkColors.blue))
+            {
+                _boardManager.player.ink = inkColors.none;
+                return;
+            }
+        }
+
+        if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.red && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.red)
+        {
+            _boardManager.redConnection = true;
+            _boardManager.player.ink = inkColors.none;
+            _boardManager.CheckSolution();
+        }
+        else if (_boardManager.currentCell != _boardManager.startingCell && _boardManager.currentCell.color == colors.blue && !_boardManager.currentCell.isEmpty && _boardManager.player.ink == inkColors.blue)
+        {
+            _boardManager.blueConnection = true;
+            _boardManager.player.ink = inkColors.none;
+            _boardManager.CheckSolution();
+        }
 
         if (_boardManager.player.ink == inkColors.blue)
             color = colors.blue;
