@@ -15,7 +15,7 @@ public class BoardManager : MonoBehaviour
     public Cell startingCell;
     [HideInInspector]
     public Cell currentCell;
-    //[HideInInspector]
+    [HideInInspector]
     public Cell previousCell;
 
     public bool redConnection = false;
@@ -24,7 +24,7 @@ public class BoardManager : MonoBehaviour
 
     public GameObject levelClearedPanel;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool mousePressed = false;
 
     void Start()
