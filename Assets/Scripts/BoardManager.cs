@@ -27,9 +27,13 @@ public class BoardManager : MonoBehaviour
     [HideInInspector]
     public bool mousePressed = false;
 
+    private NextLevel _nextLevel;
+
     void Start()
     {
         player = FindObjectOfType<Player>();
+
+        _nextLevel = FindObjectOfType<NextLevel>();
 
         for (int i = 0; i < cells.Length; i++)
         {
@@ -72,6 +76,11 @@ public class BoardManager : MonoBehaviour
             }
             levelDone = true;
             levelClearedPanel.SetActive(true);
+
+            if (_nextLevel.nextLevel > PlayerPrefs.GetInt("currentLevel"))
+            {
+                PlayerPrefs.SetInt("currentLevel", _nextLevel.nextLevel - 1);
+            }
         }
     }
 }
