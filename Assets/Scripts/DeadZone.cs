@@ -13,6 +13,7 @@ public class DeadZone : MonoBehaviour
 
     void OnMouseEnter()
     {
-        _boardManager.player.ink = inkColors.none;
+        _boardManager.mousePressed = false;
+        _boardManager.player.playerInk = colors.none;
     }
 }

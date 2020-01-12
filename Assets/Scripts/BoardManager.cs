@@ -15,12 +15,17 @@ public class BoardManager : MonoBehaviour
     public Cell startingCell;
     [HideInInspector]
     public Cell currentCell;
+    //[HideInInspector]
+    public Cell previousCell;
 
     public bool redConnection = false;
     public bool blueConnection = false;
     public bool levelDone = false;
 
     public GameObject levelClearedPanel;
+
+    //[HideInInspector]
+    public bool mousePressed = false;
 
     void Start()
     {
