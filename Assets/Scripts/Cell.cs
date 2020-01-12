@@ -32,10 +32,16 @@ public class Cell : MonoBehaviour
             _boardManager.player.playerInk = colors.blue;
             _boardManager.startingCell = this;
         }
-        else
+        else if (color == colors.red)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.red;
+            _boardManager.startingCell = this;
+        }
+        else if (color == colors.green)
+        {
+            _boardManager.ResetCells(color);
+            _boardManager.player.playerInk = colors.green;
             _boardManager.startingCell = this;
         }
     }
@@ -54,8 +60,16 @@ public class Cell : MonoBehaviour
 
         if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk == colors.blue)
             _boardManager.redConnection = false;
+        else if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk == colors.green)
+            _boardManager.redConnection = false;
         else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk == colors.red)
             _boardManager.blueConnection = false;
+        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk == colors.green)
+            _boardManager.blueConnection = false;
+        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk == colors.red)
+            _boardManager.greenConnection = false;
+        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk == colors.blue)
+            _boardManager.greenConnection = false;
 
         if (!isEmpty)
         {
@@ -78,6 +92,8 @@ public class Cell : MonoBehaviour
                 _boardManager.redConnection = true;
             else if (_boardManager.player.playerInk == colors.blue)
                 _boardManager.blueConnection = true;
+            else if (_boardManager.player.playerInk == colors.green)
+                _boardManager.greenConnection = true;
 
             _boardManager.player.playerInk = colors.none;
             _boardManager.CheckSolution();
@@ -87,6 +103,8 @@ public class Cell : MonoBehaviour
             color = colors.blue;
         else if (_boardManager.player.playerInk == colors.red)
             color = colors.red;
+        else if (_boardManager.player.playerInk == colors.green)
+            color = colors.green;
 
         SwitchColor();        
     }
@@ -106,6 +124,9 @@ public class Cell : MonoBehaviour
                 break;
             case colors.blue:
                 _spriteRenderer.color = Color.blue;
+                break;
+            case colors.green:
+                _spriteRenderer.color = Color.green;
                 break;
             case colors.none:
                 _spriteRenderer.color = Color.grey;

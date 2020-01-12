@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum colors { none, blue, red }
+public enum colors { none, blue, red , green }
 
 public class BoardManager : MonoBehaviour
 {
@@ -18,8 +18,9 @@ public class BoardManager : MonoBehaviour
     [HideInInspector]
     public Cell previousCell;
 
-    public bool redConnection = false;
-    public bool blueConnection = false;
+    public bool redConnection;
+    public bool blueConnection;
+    public bool greenConnection;
     public bool levelDone = false;
 
     public GameObject levelClearedPanel;
@@ -45,30 +46,39 @@ public class BoardManager : MonoBehaviour
     {
         for (int i = 0; i < cells.Length; i++)
         {
-            if (color == colors.red)
+            switch (color)
             {
-                if (cells[i].isEmpty && cells[i].color == colors.red)
-                {
-                    redConnection = false;
-                    cells[i].color = colors.none;
-                    cells[i].SwitchColor();
-                }
-            }
-            if (color == colors.blue)
-            {
-                if (cells[i].isEmpty && cells[i].color == colors.blue)
-                {
-                    blueConnection = false;
-                    cells[i].color = colors.none;
-                    cells[i].SwitchColor();
-                }
+                case colors.red:
+                    if (cells[i].isEmpty && cells[i].color == colors.red)
+                    {
+                        redConnection = false;
+                        cells[i].color = colors.none;
+                        cells[i].SwitchColor();
+                    }
+                    break;
+                case colors.blue:
+                    if (cells[i].isEmpty && cells[i].color == colors.blue)
+                    {
+                        blueConnection = false;
+                        cells[i].color = colors.none;
+                        cells[i].SwitchColor();
+                    }
+                    break;
+                case colors.green:
+                    if (cells[i].isEmpty && cells[i].color == colors.green)
+                    {
+                        greenConnection = false;
+                        cells[i].color = colors.none;
+                        cells[i].SwitchColor();
+                    }
+                    break;
             }
         }
     }
 
     public void CheckSolution()
     {
-        if (redConnection && blueConnection)
+        if (redConnection && blueConnection && greenConnection)
         {
             for (int i = 0; i < cells.Length; i++)
             {
