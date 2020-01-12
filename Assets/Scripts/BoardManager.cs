@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum colors { none, blue, red , green }
+public enum colors { none, blue, red , green, yellow }
 
 public class BoardManager : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class BoardManager : MonoBehaviour
     public bool redConnection;
     public bool blueConnection;
     public bool greenConnection;
+    public bool yellowConnection;
     public bool levelDone = false;
 
     public GameObject levelClearedPanel;
@@ -72,13 +73,21 @@ public class BoardManager : MonoBehaviour
                         cells[i].SwitchColor();
                     }
                     break;
+                case colors.yellow:
+                    if (cells[i].isEmpty && cells[i].color == colors.yellow)
+                    {
+                        yellowConnection = false;
+                        cells[i].color = colors.none;
+                        cells[i].SwitchColor();
+                    }
+                    break;
             }
         }
     }
 
     public void CheckSolution()
     {
-        if (redConnection && blueConnection && greenConnection)
+        if (redConnection && blueConnection && greenConnection && yellowConnection)
         {
             for (int i = 0; i < cells.Length; i++)
             {

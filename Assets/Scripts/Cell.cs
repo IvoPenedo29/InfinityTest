@@ -44,6 +44,12 @@ public class Cell : MonoBehaviour
             _boardManager.player.playerInk = colors.green;
             _boardManager.startingCell = this;
         }
+        else if (color == colors.yellow)
+        {
+            _boardManager.ResetCells(color);
+            _boardManager.player.playerInk = colors.yellow;
+            _boardManager.startingCell = this;
+        }
     }
 
     void OnMouseUp()
@@ -58,18 +64,14 @@ public class Cell : MonoBehaviour
     {
         _boardManager.currentCell = this;
 
-        if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk == colors.blue)
+        if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
             _boardManager.redConnection = false;
-        else if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk == colors.green)
-            _boardManager.redConnection = false;
-        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk == colors.red)
+        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
             _boardManager.blueConnection = false;
-        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk == colors.green)
-            _boardManager.blueConnection = false;
-        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk == colors.red)
+        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
             _boardManager.greenConnection = false;
-        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk == colors.blue)
-            _boardManager.greenConnection = false;
+        else if (_boardManager.currentCell.color == colors.yellow && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
+            _boardManager.yellowConnection = false;
 
         if (!isEmpty)
         {
@@ -94,6 +96,8 @@ public class Cell : MonoBehaviour
                 _boardManager.blueConnection = true;
             else if (_boardManager.player.playerInk == colors.green)
                 _boardManager.greenConnection = true;
+            else if (_boardManager.player.playerInk == colors.yellow)
+                _boardManager.yellowConnection = true;
 
             _boardManager.player.playerInk = colors.none;
             _boardManager.CheckSolution();
@@ -105,6 +109,8 @@ public class Cell : MonoBehaviour
             color = colors.red;
         else if (_boardManager.player.playerInk == colors.green)
             color = colors.green;
+        else if (_boardManager.player.playerInk == colors.yellow)
+            color = colors.yellow;
 
         SwitchColor();        
     }
@@ -127,6 +133,9 @@ public class Cell : MonoBehaviour
                 break;
             case colors.green:
                 _spriteRenderer.color = Color.green;
+                break;
+            case colors.yellow:
+                _spriteRenderer.color = Color.yellow;
                 break;
             case colors.none:
                 _spriteRenderer.color = Color.grey;
