@@ -36,7 +36,7 @@ public class BoardManager : MonoBehaviour
     private NextLevel _nextLevel;
 
     [Header("Camera Shake")]
-    public float shakeAmount = 0.7f;
+    public float shakeAmount = 0.2f;
     private Transform _camTransform;
     private float _shakeDuration = 0f;
     private float _decreaseFactor = 1.0f;
@@ -134,7 +134,9 @@ public class BoardManager : MonoBehaviour
             {
                 cells[i].GetComponent<BoxCollider2D>().enabled = false;
             }
+
             levelClearedPanel.SetActive(true);
+            AudioManager.instance.Play("Victory FX");
 
             if (_nextLevel.nextLevel > PlayerPrefs.GetInt("currentLevel"))
             {

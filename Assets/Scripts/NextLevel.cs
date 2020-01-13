@@ -17,20 +17,38 @@ public class NextLevel : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 11)
         {
-            if(Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
+            if (AudioManager.instance.IsPlaying("Victory FX"))
+                AudioManager.instance.Stop("Victory FX");
+
+            if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
                 SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
             else
                 SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
         }
-        else        
+        else
+        {
+            if (AudioManager.instance.IsPlaying("Victory FX"))
+                AudioManager.instance.Stop("Victory FX");
+
             SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);                    
+        }
     }
 
     public void LoadMainMenu()
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            if (AudioManager.instance.IsPlaying("Victory FX"))
+                AudioManager.instance.Stop("Victory FX");
+
             SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
+        }
         else
+        {
+            if (AudioManager.instance.IsPlaying("Victory FX"))
+                AudioManager.instance.Stop("Victory FX");
+
             SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
+        }
     }
 }

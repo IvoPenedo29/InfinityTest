@@ -1466,7 +1466,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7529412, g: 0.49411765, b: 0.68235296, a: 0}
+  m_BackGroundColor: {r: 0.49411765, g: 0.7529412, b: 0.60784316, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5757,9 +5757,9 @@ MonoBehaviour:
   greenConnection: 0
   yellowConnection: 1
   cyanConnection: 1
-  levelDone: 0
   levelClearedPanel: {fileID: 77917797}
   mousePressed: 0
+  shakeAmount: 0.2
 --- !u!1001 &2081382790
 PrefabInstance:
   m_ObjectHideFlags: 0

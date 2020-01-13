@@ -64,76 +64,87 @@ public class Cell : MonoBehaviour
 
         _boardManager.previousCell = null;
         _boardManager.mousePressed = false;
+        AudioManager.instance.sounds[1].source.pitch = 1.0f;
         _boardManager.CheckLight();
     }
 
     void OnMouseEnter()
     {
-        _boardManager.currentCell = this;
-
-        if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
-            _boardManager.redConnection = false;
-        else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
-            _boardManager.blueConnection = false;
-        else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
-            _boardManager.greenConnection = false;
-        else if (_boardManager.currentCell.color == colors.yellow && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
-            _boardManager.yellowConnection = false;
-        else if (_boardManager.currentCell.color == colors.cyan && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
-            _boardManager.cyanConnection = false;
-
-        if (!isEmpty)
+        if (_boardManager.mousePressed)
         {
-            if (_boardManager.currentCell.color != _boardManager.player.playerInk)
+            AudioManager.instance.Play("Marimba");
+
+            if (AudioManager.instance.sounds[1].source.pitch < 3.0f)
+                AudioManager.instance.sounds[1].source.pitch += 0.2f;
+            else
+                AudioManager.instance.sounds[1].source.pitch = 3.0f;
+
+            _boardManager.currentCell = this;
+
+            if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+                _boardManager.redConnection = false;
+            else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+                _boardManager.blueConnection = false;
+            else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+                _boardManager.greenConnection = false;
+            else if (_boardManager.currentCell.color == colors.yellow && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+                _boardManager.yellowConnection = false;
+            else if (_boardManager.currentCell.color == colors.cyan && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+                _boardManager.cyanConnection = false;
+
+            if (!isEmpty)
             {
-                _boardManager.player.playerInk = colors.none;
-                return;
+                if (_boardManager.currentCell.color != _boardManager.player.playerInk)
+                {
+                    _boardManager.player.playerInk = colors.none;
+                    return;
+                }
             }
-        }
 
-        if (_boardManager.previousCell != null && _boardManager.currentCell.color == _boardManager.player.playerInk && (_boardManager.currentCell.isEmpty || _boardManager.currentCell == _boardManager.startingCell))
-        {
-            _boardManager.previousCell.color = colors.none;
-            _boardManager.previousCell.SwitchColor();
-        }
+            if (_boardManager.previousCell != null && _boardManager.currentCell.color == _boardManager.player.playerInk && (_boardManager.currentCell.isEmpty || _boardManager.currentCell == _boardManager.startingCell))
+            {
+                _boardManager.previousCell.color = colors.none;
+                _boardManager.previousCell.SwitchColor();
+            }
 
-        if (_boardManager.currentCell != _boardManager.startingCell && !_boardManager.currentCell.isEmpty && _boardManager.currentCell.color == _boardManager.player.playerInk)
-        {
-            if (_boardManager.player.playerInk == colors.red)
-                _boardManager.redConnection = true;
-            else if (_boardManager.player.playerInk == colors.blue)
-                _boardManager.blueConnection = true;
+            if (_boardManager.currentCell != _boardManager.startingCell && !_boardManager.currentCell.isEmpty && _boardManager.currentCell.color == _boardManager.player.playerInk)
+            {
+                if (_boardManager.player.playerInk == colors.red)
+                    _boardManager.redConnection = true;
+                else if (_boardManager.player.playerInk == colors.blue)
+                    _boardManager.blueConnection = true;
+                else if (_boardManager.player.playerInk == colors.green)
+                    _boardManager.greenConnection = true;
+                else if (_boardManager.player.playerInk == colors.yellow)
+                    _boardManager.yellowConnection = true;
+                else if (_boardManager.player.playerInk == colors.cyan)
+                    _boardManager.cyanConnection = true;
+
+                _boardManager.mousePressed = false;
+                _boardManager.player.playerInk = colors.none;
+                _boardManager.CheckSolution();
+                _boardManager.CheckLight();
+                _boardManager.CameraShake();
+            }
+
+            if (_boardManager.player.playerInk == colors.blue)
+                color = colors.blue;
+            else if (_boardManager.player.playerInk == colors.red)
+                color = colors.red;
             else if (_boardManager.player.playerInk == colors.green)
-                _boardManager.greenConnection = true;
+                color = colors.green;
             else if (_boardManager.player.playerInk == colors.yellow)
-                _boardManager.yellowConnection = true;
+                color = colors.yellow;
             else if (_boardManager.player.playerInk == colors.cyan)
-                _boardManager.cyanConnection = true;
+                color = colors.cyan;
 
-            _boardManager.mousePressed = false;
-            _boardManager.player.playerInk = colors.none;
-            _boardManager.CheckSolution();
-            _boardManager.CheckLight();
-            _boardManager.CameraShake();
-        }
-
-        if (_boardManager.player.playerInk == colors.blue)
-            color = colors.blue;
-        else if (_boardManager.player.playerInk == colors.red)
-            color = colors.red;
-        else if (_boardManager.player.playerInk == colors.green)
-            color = colors.green;
-        else if (_boardManager.player.playerInk == colors.yellow)
-            color = colors.yellow;
-        else if (_boardManager.player.playerInk == colors.cyan)
-            color = colors.cyan;
-
-        SwitchColor();        
+            SwitchColor();
+        }              
     }
 
     void OnMouseExit()
     {
-        if(isEmpty && _boardManager.mousePressed)
+        if(isEmpty && _boardManager.mousePressed && _boardManager.player.playerInk != colors.none)
             _boardManager.previousCell = this;
     }
 
