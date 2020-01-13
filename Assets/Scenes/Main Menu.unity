@@ -631,7 +631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150.00003, y: -292.50003}
+  m_AnchoredPosition: {x: 150, y: -292.5}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393679629
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498249830}
+      - m_Target: {fileID: 567742800}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -708,7 +708,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1752738171}
+      - m_Target: {fileID: 498249830}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 435526663}
   - component: {fileID: 435526662}
   m_Layer: 5
-  m_Name: Normal Pack
+  m_Name: 7x7 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Pack
+  m_Text: 7x7 Pack
 --- !u!222 &435526664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 527173214}
   - component: {fileID: 527173213}
   m_Layer: 5
-  m_Name: Hard Pack
+  m_Name: 9x9 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Pack (7x7)
+  m_Text: 7x7 Pack
 --- !u!222 &541178407
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 567742803}
   - component: {fileID: 567742802}
   m_Layer: 5
-  m_Name: Hard Pack Panel
+  m_Name: 9x9 Pack Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1872,7 +1872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498249830}
+      - m_Target: {fileID: 985609505}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1883,7 +1883,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1752738171}
+      - m_Target: {fileID: 498249830}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1935,7 +1935,7 @@ GameObject:
   - component: {fileID: 775153359}
   - component: {fileID: 775153358}
   m_Layer: 5
-  m_Name: Hard Pack
+  m_Name: 9x9 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2011,7 +2011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hard Pack
+  m_Text: 9x9 Pack
 --- !u!222 &775153360
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2780,7 +2780,7 @@ GameObject:
   - component: {fileID: 981151066}
   - component: {fileID: 981151065}
   m_Layer: 5
-  m_Name: Normal Pack Panel
+  m_Name: 7x7 Pack Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2856,7 +2856,7 @@ GameObject:
   - component: {fileID: 985609508}
   - component: {fileID: 985609507}
   m_Layer: 5
-  m_Name: Easy Pack Panel
+  m_Name: 5x5 Pack Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3078,7 +3078,7 @@ GameObject:
   - component: {fileID: 1079517908}
   - component: {fileID: 1079517907}
   m_Layer: 5
-  m_Name: Easy Pack
+  m_Name: 5x5 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3727,7 +3727,7 @@ GameObject:
   - component: {fileID: 1221133540}
   - component: {fileID: 1221133542}
   m_Layer: 5
-  m_Name: Easy Pack
+  m_Name: 5x5 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3783,7 +3783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Easy Pack
+  m_Text: 5x5 Pack
 --- !u!222 &1221133541
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3901,7 +3901,7 @@ GameObject:
   - component: {fileID: 1299777643}
   - component: {fileID: 1299777642}
   m_Layer: 5
-  m_Name: Normal Pack
+  m_Name: 7x7 Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4275,7 +4275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Easy Pack (5x5)
+  m_Text: 5x5 Pack
 --- !u!222 &1414325104
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4559,7 +4559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hard Pack (9x9)
+  m_Text: 9x9 Pack
 --- !u!222 &1554330373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4604,7 +4604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150.00003, y: -292.50003}
+  m_AnchoredPosition: {x: 150, y: -292.5}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612234569
@@ -4670,7 +4670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498249830}
+      - m_Target: {fileID: 981151063}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -4681,7 +4681,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1752738171}
+      - m_Target: {fileID: 498249830}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

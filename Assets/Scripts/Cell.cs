@@ -50,6 +50,12 @@ public class Cell : MonoBehaviour
             _boardManager.player.playerInk = colors.yellow;
             _boardManager.startingCell = this;
         }
+        else
+        {
+            _boardManager.ResetCells(color);
+            _boardManager.player.playerInk = colors.cyan;
+            _boardManager.startingCell = this;
+        }
     }
 
     void OnMouseUp()
@@ -72,6 +78,8 @@ public class Cell : MonoBehaviour
             _boardManager.greenConnection = false;
         else if (_boardManager.currentCell.color == colors.yellow && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
             _boardManager.yellowConnection = false;
+        else if (_boardManager.currentCell.color == colors.cyan && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.mousePressed)
+            _boardManager.cyanConnection = false;
 
         if (!isEmpty)
         {
@@ -98,6 +106,8 @@ public class Cell : MonoBehaviour
                 _boardManager.greenConnection = true;
             else if (_boardManager.player.playerInk == colors.yellow)
                 _boardManager.yellowConnection = true;
+            else if (_boardManager.player.playerInk == colors.cyan)
+                _boardManager.cyanConnection = true;
 
             _boardManager.player.playerInk = colors.none;
             _boardManager.CheckSolution();
@@ -111,6 +121,8 @@ public class Cell : MonoBehaviour
             color = colors.green;
         else if (_boardManager.player.playerInk == colors.yellow)
             color = colors.yellow;
+        else if (_boardManager.player.playerInk == colors.cyan)
+            color = colors.cyan;
 
         SwitchColor();        
     }
@@ -136,6 +148,9 @@ public class Cell : MonoBehaviour
                 break;
             case colors.yellow:
                 _spriteRenderer.color = Color.yellow;
+                break;
+            case colors.cyan:
+                _spriteRenderer.color = Color.cyan;
                 break;
             case colors.none:
                 _spriteRenderer.color = Color.grey;

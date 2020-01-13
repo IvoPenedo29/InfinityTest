@@ -5684,6 +5684,7 @@ MonoBehaviour:
   blueConnection: 0
   greenConnection: 0
   yellowConnection: 1
+  cyanConnection: 1
   levelDone: 0
   levelClearedPanel: {fileID: 77917797}
   mousePressed: 0
