@@ -23,12 +23,16 @@ public class NextLevel : MonoBehaviour
             if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
                 SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
             else
+            {
                 SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
+            }
         }
         else
         {
             if (AudioManager.instance.IsPlaying("Victory FX"))
                 AudioManager.instance.Stop("Victory FX");
+
+            AdManager.instance.ShowPopUp();
 
             SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);                    
         }
@@ -47,6 +51,8 @@ public class NextLevel : MonoBehaviour
         {
             if (AudioManager.instance.IsPlaying("Victory FX"))
                 AudioManager.instance.Stop("Victory FX");
+
+            AdManager.instance.ShowPopUp();
 
             SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
         }
