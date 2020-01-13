@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     public colors color;
 
     private SpriteRenderer _spriteRenderer;
-    private BoardManager _boardManager;    
+    private BoardManager _boardManager;
 
     void Awake()
     {
@@ -64,6 +64,7 @@ public class Cell : MonoBehaviour
 
         _boardManager.previousCell = null;
         _boardManager.mousePressed = false;
+        _boardManager.CheckLight();
     }
 
     void OnMouseEnter()

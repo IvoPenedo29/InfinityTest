@@ -7,15 +7,32 @@ public class Player : MonoBehaviour
     public colors playerInk;
 
     public GameObject particlePrefab;
+    private GameObject _spawnedParticles;
+
+    Vector3 mousePos;
+    Vector3 worldPos;
+
+    void Start()
+    {
+        _spawnedParticles = Instantiate(particlePrefab, Vector3.zero, Quaternion.identity);
+        _spawnedParticles.SetActive(false);
+    }
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        mousePos = Input.mousePosition;
+        mousePos.z = 1.5f;
+        worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        if (Input.GetMouseButtonDown(0))
         {
-            var mousePos = Input.mousePosition;
-            mousePos.z = 1.5f;
-            var worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-            Instantiate(particlePrefab, worldPos, Quaternion.identity);
+            _spawnedParticles.SetActive(true);
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            _spawnedParticles.SetActive(false);
+        }
+
+        _spawnedParticles.transform.position = worldPos;
     }
 }
