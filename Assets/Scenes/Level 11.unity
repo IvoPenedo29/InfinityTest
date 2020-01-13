@@ -452,7 +452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 2
 --- !u!1001 &112205210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,7 +970,7 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.95
+      value: 4.133
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -1095,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.811
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -1690,7 +1690,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -1788,8 +1788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 5
 --- !u!61 &271033645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1976,7 +1976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &305923758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2449,7 +2449,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -2547,8 +2547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 5
+  isEmpty: 1
+  color: 0
 --- !u!61 &377652466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2938,7 +2938,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -3036,8 +3036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 5
 --- !u!61 &447480607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3467,7 +3467,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.0627451, g: 0.0627451, b: 0.0627451, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3550,7 +3550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 450, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531831663
@@ -4425,7 +4425,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -4570,8 +4570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 4
+  isEmpty: 1
+  color: 0
 --- !u!1001 &597526290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5723,7 +5723,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -5868,8 +5868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 3
 --- !u!1001 &798961541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6078,12 +6078,12 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.496
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.47
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -6355,12 +6355,12 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.132
+      value: 3.318
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.831
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -7281,7 +7281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -7379,8 +7379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 5
+  isEmpty: 1
+  color: 0
 --- !u!61 &911733543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7607,7 +7607,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -7705,8 +7705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 4
 --- !u!61 &946523280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8776,7 +8776,7 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.471
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -9364,7 +9364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEmpty: 0
-  color: 1
+  color: 2
 --- !u!61 &1184853535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9960,7 +9960,7 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.602
+      value: -0.781
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -10377,7 +10377,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -10475,8 +10475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 1
+  isEmpty: 1
+  color: 0
 --- !u!61 &1382032158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10723,7 +10723,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -10868,8 +10868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 4
 --- !u!1001 &1467945136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10886,7 +10886,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -11031,8 +11031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 1
 --- !u!1001 &1473337534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11189,7 +11189,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -11334,8 +11334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 2
+  isEmpty: 1
+  color: 0
 --- !u!1001 &1498469466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11352,7 +11352,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -11450,8 +11450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 4
+  isEmpty: 1
+  color: 0
 --- !u!61 &1498469470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11718,7 +11718,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -11816,8 +11816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 2
+  isEmpty: 1
+  color: 0
 --- !u!61 &1509363914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13102,7 +13102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
+      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -13247,8 +13247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 1
-  color: 0
+  isEmpty: 0
+  color: 1
 --- !u!1001 &1685561679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13422,7 +13422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 770cfa178eb7ebd458758863f2d14f4c,
+      objectReference: {fileID: 21300000, guid: d74b491cbc9d0f640a55e734b28a4336,
         type: 3}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -13520,8 +13520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2ce63a9d66ff42b740aae90934634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
-  color: 3
+  isEmpty: 1
+  color: 0
 --- !u!61 &1690931377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14236,7 +14236,7 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.499
+      value: 0.863
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
@@ -15158,12 +15158,12 @@ PrefabInstance:
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04
+      value: -1.599
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.291
+      value: -4.111
       objectReference: {fileID: 0}
     - target: {fileID: 125726100400922008, guid: 4ae460728f4301c40b4074f8bee69d77,
         type: 3}

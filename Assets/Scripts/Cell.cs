@@ -109,6 +109,7 @@ public class Cell : MonoBehaviour
             else if (_boardManager.player.playerInk == colors.cyan)
                 _boardManager.cyanConnection = true;
 
+            _boardManager.mousePressed = false;
             _boardManager.player.playerInk = colors.none;
             _boardManager.CheckSolution();
         }

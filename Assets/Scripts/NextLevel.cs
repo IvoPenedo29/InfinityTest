@@ -16,13 +16,21 @@ public class NextLevel : MonoBehaviour
     public void LoadNextLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex == 11)
-            SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+        {
+            if(Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
+                SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
+            else
+                SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
+        }
         else        
             SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);                    
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
+            SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
     }
 }
