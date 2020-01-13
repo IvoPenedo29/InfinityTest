@@ -1881,6 +1881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInk: 0
+  particlePrefab: {fileID: 7259826626370366884, guid: f525781546048e342898f79ee11d8a5e,
+    type: 3}
 --- !u!1 &282826129
 GameObject:
   m_ObjectHideFlags: 0
