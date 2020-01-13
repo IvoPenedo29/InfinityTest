@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -15182,9 +15182,9 @@ MonoBehaviour:
   greenConnection: 0
   yellowConnection: 0
   cyanConnection: 0
-  levelDone: 0
   levelClearedPanel: {fileID: 77917797}
   mousePressed: 0
+  shakeAmount: 0.2
 --- !u!1001 &2081382790
 PrefabInstance:
   m_ObjectHideFlags: 0

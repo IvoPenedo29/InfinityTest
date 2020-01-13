@@ -10,6 +10,7 @@ public class BoardManager : MonoBehaviour
     [HideInInspector]
     public Player player;
 
+    [Header("Cells")]
     public Cell[] cells;
 
     [HideInInspector]
@@ -19,13 +20,14 @@ public class BoardManager : MonoBehaviour
     [HideInInspector]
     public Cell previousCell;
 
+    [Header("Connections")]
     public bool redConnection;
     public bool blueConnection;
     public bool greenConnection;
     public bool yellowConnection;
     public bool cyanConnection;
-    public bool levelDone = false;
 
+    [Header("Level Cleared Panel")]
     public GameObject levelClearedPanel;
 
     [HideInInspector]
@@ -33,15 +35,39 @@ public class BoardManager : MonoBehaviour
 
     private NextLevel _nextLevel;
 
+    [Header("Camera Shake")]
+    public float shakeAmount = 0.7f;
+    private Transform _camTransform;
+    private float _shakeDuration = 0f;
+    private float _decreaseFactor = 1.0f;
+    private Vector3 _originalPos;
+
     void Start()
     {
         player = FindObjectOfType<Player>();
+        _camTransform = Camera.main.transform;
+        _originalPos = _camTransform.localPosition;
 
         _nextLevel = FindObjectOfType<NextLevel>();
 
         for (int i = 0; i < cells.Length; i++)
         {
             cells[i].SwitchColor();
+        }
+    }
+
+    void Update()
+    {
+        if (_shakeDuration > 0)
+        {
+            _camTransform.localPosition = _originalPos + Random.insideUnitSphere * shakeAmount;
+
+            _shakeDuration -= Time.deltaTime * _decreaseFactor;
+        }
+        else
+        {
+            _shakeDuration = 0f;
+            _camTransform.localPosition = _originalPos;
         }
     }
 
@@ -57,6 +83,7 @@ public class BoardManager : MonoBehaviour
                         redConnection = false;
                         cells[i].color = colors.none;
                         cells[i].SwitchColor();
+                        CheckLight();
                     }
                     break;
                 case colors.blue:
@@ -65,6 +92,7 @@ public class BoardManager : MonoBehaviour
                         blueConnection = false;
                         cells[i].color = colors.none;
                         cells[i].SwitchColor();
+                        CheckLight();
                     }
                     break;
                 case colors.green:
@@ -73,6 +101,7 @@ public class BoardManager : MonoBehaviour
                         greenConnection = false;
                         cells[i].color = colors.none;
                         cells[i].SwitchColor();
+                        CheckLight();
                     }
                     break;
                 case colors.yellow:
@@ -81,6 +110,7 @@ public class BoardManager : MonoBehaviour
                         yellowConnection = false;
                         cells[i].color = colors.none;
                         cells[i].SwitchColor();
+                        CheckLight();
                     }
                     break;
                 case colors.cyan:
@@ -89,6 +119,7 @@ public class BoardManager : MonoBehaviour
                         cyanConnection = false;
                         cells[i].color = colors.none;
                         cells[i].SwitchColor();
+                        CheckLight();
                     }
                     break;
             }
@@ -103,7 +134,6 @@ public class BoardManager : MonoBehaviour
             {
                 cells[i].GetComponent<BoxCollider2D>().enabled = false;
             }
-            levelDone = true;
             levelClearedPanel.SetActive(true);
 
             if (_nextLevel.nextLevel > PlayerPrefs.GetInt("currentLevel"))
@@ -124,7 +154,7 @@ public class BoardManager : MonoBehaviour
                     cells[i].GetComponent<Light2D>().enabled = true;
                     cells[i].GetComponent<Light2D>().color = Color.blue;
                 }
-            }
+            }            
         }
         else
         {
@@ -220,5 +250,10 @@ public class BoardManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void CameraShake()
+    {
+        _shakeDuration = 0.2f;
     }
 }

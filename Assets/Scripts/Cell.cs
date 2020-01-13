@@ -113,6 +113,8 @@ public class Cell : MonoBehaviour
             _boardManager.mousePressed = false;
             _boardManager.player.playerInk = colors.none;
             _boardManager.CheckSolution();
+            _boardManager.CheckLight();
+            _boardManager.CameraShake();
         }
 
         if (_boardManager.player.playerInk == colors.blue)
