@@ -15,6 +15,31 @@ public class DeadZone : MonoBehaviour
     {
         _boardManager.mousePressed = false;
         _boardManager.player.playerInk = colors.none;
-        _boardManager.ResetCells(_boardManager.currentCell.color);
+        if (_boardManager.currentCell != null)
+        {
+            switch (_boardManager.currentCell.color)
+            {
+                case colors.red:
+                    if(!_boardManager.redConnection)
+                        _boardManager.ResetCells(_boardManager.currentCell.color);
+                    break;
+                case colors.blue:
+                    if (!_boardManager.blueConnection)
+                        _boardManager.ResetCells(_boardManager.currentCell.color);
+                    break;
+                case colors.green:
+                    if (!_boardManager.greenConnection)
+                        _boardManager.ResetCells(_boardManager.currentCell.color);
+                    break;
+                case colors.yellow:
+                    if (!_boardManager.yellowConnection)
+                        _boardManager.ResetCells(_boardManager.currentCell.color);
+                    break;
+                case colors.cyan:
+                    if (!_boardManager.cyanConnection)
+                        _boardManager.ResetCells(_boardManager.currentCell.color);
+                    break;
+            }
+        }            
     }
 }

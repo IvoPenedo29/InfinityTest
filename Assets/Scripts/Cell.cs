@@ -77,12 +77,15 @@ public class Cell : MonoBehaviour
     {
         if (_boardManager.mousePressed)
         {
-            AudioManager.instance.Play("Marimba");
+            if (_boardManager.player.playerInk != colors.none)
+            {
+                AudioManager.instance.Play("Marimba");
 
-            if (AudioManager.instance.sounds[1].source.pitch < 3.0f)
-                AudioManager.instance.sounds[1].source.pitch += 0.2f;
-            else
-                AudioManager.instance.sounds[1].source.pitch = 3.0f;
+                if (AudioManager.instance.sounds[1].source.pitch < 3.0f)
+                    AudioManager.instance.sounds[1].source.pitch += 0.2f;
+                else
+                    AudioManager.instance.sounds[1].source.pitch = 3.0f;
+            }            
 
             _boardManager.currentCell = this;
 

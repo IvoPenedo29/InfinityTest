@@ -21,12 +21,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            print(PlayerPrefs.GetInt("currentLevel"));
-        else if (Input.GetKeyDown(KeyCode.Delete))
-            PlayerPrefs.DeleteAll();
-    }
 }

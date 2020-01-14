@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "key": "play_game_button",
+      "value": "Play game"
+    },
+    {
+      "key": "exit_button",
+      "value": "Exit"
+    },
+    {
+      "key": "levels_text",
+      "value": "Levels"
+    },
+    {
+      "key": "5x5_pack_button",
+      "value": "5x5 Pack"
+    },
+    {
+      "key": "7x7_pack_button",
+      "value": "7x7 Pack"
+    },
+    {
+      "key": "9x9_pack_button",
+      "value": "9x9 Pack"
+    },
+    {
+      "key": "5x5_pack_text",
+      "value": "5x5 Pack"
+    },
+    {
+      "key": "7x7_pack_text",
+      "value": "7x7 Pack"
+    },
+    {
+      "key": "9x9_pack_text",
+      "value": "9x9 Pack"
+    },
+    {
+      "key": "level_cleared",
+      "value": "Level Cleared"
+    },
+    {
+      "key": "next_level_button",
+      "value": "Next Level"
+    },
+    {
+      "key": "main_menu_button",
+      "value": "Main Menu"
+    }
+  ]
+}
