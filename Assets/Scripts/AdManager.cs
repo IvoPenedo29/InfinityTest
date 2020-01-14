@@ -5,29 +5,54 @@ using GoogleMobileAds.Api;
 
 public class AdManager : MonoBehaviour
 {
-    public static AdManager instance;
+    private static AdManager _instance;
 
     private BannerView bannerView;
     private InterstitialAd interstitial;
 
-    void Awake()
+    [HideInInspector]
+    private float _timer = 0.0f;
+    [HideInInspector]
+    public bool adReady = true;
+
+    public static AdManager instance
     {
-        if (instance == null)
+        get
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if(instance != this)
-        {
-            Destroy(gameObject);
+            if (_instance == null)
+                _instance = Instantiate<GameObject>(Resources.Load<GameObject>("Ad Manager")).GetComponent<AdManager>();
+
+            return _instance;
         }
     }
+
+    public void InitAdManager()
+    {
+        return;
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update()
+    {
+        if(!adReady)
+            _timer -= Time.deltaTime;
+
+        if (_timer <= 0.0f)
+        {
+            adReady = true;
+            _timer = 60.0f;
+        }
+    }
+
 
     void Start()
     {
         string appId = "ca-app-pub-3940256099942544~3347511713";
 
-        //MobileAds.Initialize(initStatus => { });
         MobileAds.Initialize(appId);
 
         RequestBanner();

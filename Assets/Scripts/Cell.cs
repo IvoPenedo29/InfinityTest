@@ -60,6 +60,11 @@ public class Cell : MonoBehaviour
 
     void OnMouseUp()
     {
+        if (_boardManager.currentCell.isEmpty)
+        {
+            _boardManager.ResetCells(_boardManager.currentCell.color);
+        }
+
         _boardManager.player.playerInk = colors.none;
 
         _boardManager.previousCell = null;
@@ -82,15 +87,30 @@ public class Cell : MonoBehaviour
             _boardManager.currentCell = this;
 
             if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+            {
                 _boardManager.redConnection = false;
+                _boardManager.ResetCells(colors.red);
+            }
             else if (_boardManager.currentCell.color == colors.blue && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+            {
                 _boardManager.blueConnection = false;
+                _boardManager.ResetCells(colors.blue);
+            }
             else if (_boardManager.currentCell.color == colors.green && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+            {
                 _boardManager.greenConnection = false;
+                _boardManager.ResetCells(colors.green);
+            }
             else if (_boardManager.currentCell.color == colors.yellow && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+            {
                 _boardManager.yellowConnection = false;
+                _boardManager.ResetCells(colors.yellow);
+            }
             else if (_boardManager.currentCell.color == colors.cyan && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
+            {
                 _boardManager.cyanConnection = false;
+                _boardManager.ResetCells(colors.cyan);
+            }
 
             if (!isEmpty)
             {
@@ -101,10 +121,11 @@ public class Cell : MonoBehaviour
                 }
             }
 
-            if (_boardManager.previousCell != null && _boardManager.currentCell.color == _boardManager.player.playerInk && (_boardManager.currentCell.isEmpty || _boardManager.currentCell == _boardManager.startingCell))
-            {
-                _boardManager.previousCell.color = colors.none;
-                _boardManager.previousCell.SwitchColor();
+            if (_boardManager.currentCell != null && _boardManager.previousCell != null && _boardManager.currentCell.color == _boardManager.previousCell.color && _boardManager.currentCell.isEmpty)
+            {                
+                _boardManager.player.playerInk = colors.none;
+                _boardManager.mousePressed = false;
+                _boardManager.ResetCells(_boardManager.currentCell.color);
             }
 
             if (_boardManager.currentCell != _boardManager.startingCell && !_boardManager.currentCell.isEmpty && _boardManager.currentCell.color == _boardManager.player.playerInk)
@@ -139,13 +160,13 @@ public class Cell : MonoBehaviour
                 color = colors.cyan;
 
             SwitchColor();
-        }              
+        }
     }
 
     void OnMouseExit()
     {
         if(isEmpty && _boardManager.mousePressed && _boardManager.player.playerInk != colors.none)
-            _boardManager.previousCell = this;
+            _boardManager.previousCell = this;        
     }
 
     public void SwitchColor()

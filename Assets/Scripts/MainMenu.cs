@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     void Awake()
     {
         AudioManager.instance.InitAudioManager();
+        AdManager.instance.InitAdManager();
         AudioManager.instance.Play("Background Music");
     }
 

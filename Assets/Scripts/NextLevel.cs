@@ -24,6 +24,12 @@ public class NextLevel : MonoBehaviour
                 SceneManager.LoadScene("Main Menu Standalone", LoadSceneMode.Single);
             else
             {
+                if (AdManager.instance.adReady)
+                {
+                    AdManager.instance.ShowPopUp();
+                    AdManager.instance.adReady = false;
+                }
+
                 SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
             }
         }
@@ -32,7 +38,11 @@ public class NextLevel : MonoBehaviour
             if (AudioManager.instance.IsPlaying("Victory FX"))
                 AudioManager.instance.Stop("Victory FX");
 
-            AdManager.instance.ShowPopUp();
+            if (AdManager.instance.adReady)
+            {
+                AdManager.instance.ShowPopUp();
+                AdManager.instance.adReady = false;
+            }
 
             SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);                    
         }
@@ -52,7 +62,11 @@ public class NextLevel : MonoBehaviour
             if (AudioManager.instance.IsPlaying("Victory FX"))
                 AudioManager.instance.Stop("Victory FX");
 
-            AdManager.instance.ShowPopUp();
+            if (AdManager.instance.adReady)
+            {
+                AdManager.instance.ShowPopUp();
+                AdManager.instance.adReady = false;
+            }
 
             SceneManager.LoadScene("Main Menu Smartphone", LoadSceneMode.Single);
         }

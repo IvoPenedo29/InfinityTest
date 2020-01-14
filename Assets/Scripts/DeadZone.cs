@@ -15,5 +15,6 @@ public class DeadZone : MonoBehaviour
     {
         _boardManager.mousePressed = false;
         _boardManager.player.playerInk = colors.none;
+        _boardManager.ResetCells(_boardManager.currentCell.color);
     }
 }
