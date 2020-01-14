@@ -1390,7 +1390,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &553408577 stripped
 Transform:
@@ -2695,7 +2696,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &802362928 stripped
 Transform:
@@ -2810,7 +2812,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &811403290 stripped
 Transform:
@@ -3585,7 +3588,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &1114957601 stripped
 Transform:
@@ -5360,7 +5364,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &1945789536 stripped
 Transform:
@@ -5891,7 +5896,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.82
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8943749903616715642, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ae460728f4301c40b4074f8bee69d77, type: 3}
 --- !u!4 &2081382791 stripped
 Transform:

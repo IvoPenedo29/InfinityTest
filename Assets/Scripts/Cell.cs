@@ -115,16 +115,14 @@ public class Cell : MonoBehaviour
                 _boardManager.ResetCells(colors.cyan);
             }
 
-            if (!isEmpty)
+            if (!isEmpty && _boardManager.currentCell.color != _boardManager.player.playerInk)
             {
-                if (_boardManager.currentCell.color != _boardManager.player.playerInk)
-                {
-                    _boardManager.player.playerInk = colors.none;
-                    return;
-                }
+                _boardManager.ResetCells(_boardManager.player.playerInk);
+                _boardManager.player.playerInk = colors.none;
+                return;
             }
 
-            if (_boardManager.currentCell != null && _boardManager.previousCell != null && _boardManager.currentCell.color == _boardManager.previousCell.color && _boardManager.currentCell.isEmpty)
+            if (color == _boardManager.player.playerInk && _boardManager.currentCell.isEmpty)
             {                
                 _boardManager.player.playerInk = colors.none;
                 _boardManager.mousePressed = false;
@@ -145,6 +143,7 @@ public class Cell : MonoBehaviour
                     _boardManager.cyanConnection = true;
 
                 _boardManager.mousePressed = false;
+                _boardManager.startingCell = null;
                 _boardManager.player.playerInk = colors.none;
                 _boardManager.CheckSolution();
                 _boardManager.CheckLight();

@@ -14,11 +14,11 @@ public class BoardManager : MonoBehaviour
     public Cell[] cells;
 
     [HideInInspector]
-    public Cell startingCell;
+    public Cell startingCell = null;
     [HideInInspector]
-    public Cell currentCell;
+    public Cell currentCell = null;
     [HideInInspector]
-    public Cell previousCell;
+    public Cell previousCell = null;
 
     [Header("Connections")]
     public bool redConnection;
