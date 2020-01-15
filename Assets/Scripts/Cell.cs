@@ -31,30 +31,35 @@ public class Cell : MonoBehaviour
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.blue;
             _boardManager.startingCell = this;
+            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.red)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.red;
             _boardManager.startingCell = this;
+            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.green)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.green;
             _boardManager.startingCell = this;
+            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.yellow)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.yellow;
             _boardManager.startingCell = this;
+            //_boardManager.player.SetStartingCell(this);
         }
         else
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.cyan;
             _boardManager.startingCell = this;
+            //_boardManager.player.SetStartingCell(this);
         }
     }
 
@@ -88,6 +93,8 @@ public class Cell : MonoBehaviour
             }            
 
             _boardManager.currentCell = this;
+
+            //_boardManager.player.EnteredCell(this);
 
             if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
             {
@@ -193,6 +200,6 @@ public class Cell : MonoBehaviour
             case colors.none:
                 _spriteRenderer.color = Color.grey;
                 break;
-        }        
+        }
     }
 }
