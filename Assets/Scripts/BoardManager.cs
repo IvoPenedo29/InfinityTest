@@ -44,12 +44,14 @@ public class BoardManager : MonoBehaviour
 
     void Start()
     {
+        //Inicialização de variáveis
         player = FindObjectOfType<Player>();
         _camTransform = Camera.main.transform;
         _originalPos = _camTransform.localPosition;
 
         _nextLevel = FindObjectOfType<NextLevel>();
 
+        //Pintar a grelha de acordo com as cores atribuídas no inspector
         for (int i = 0; i < cells.Length; i++)
         {
             cells[i].SwitchColor();
@@ -58,6 +60,7 @@ public class BoardManager : MonoBehaviour
 
     void Update()
     {
+        //Realizar uma shake da câmara quando o mesmo for solicitado
         if (_shakeDuration > 0)
         {
             _camTransform.localPosition = _originalPos + Random.insideUnitSphere * shakeAmount;
@@ -71,6 +74,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    //Função para colocar todas as células de uma determinada cor no seu estado inicial
     public void ResetCells(colors color)
     {
         for (int i = 0; i < cells.Length; i++)
@@ -126,6 +130,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    //Função para verificar se o nível foi concluído
     public void CheckSolution()
     {        
         if (redConnection && blueConnection && greenConnection && yellowConnection & cyanConnection)
@@ -145,6 +150,7 @@ public class BoardManager : MonoBehaviour
         }        
     }
 
+    //Função para verificar se alguma conexão foi concluída e acender a luz caso tenha sido
     public void CheckLight()
     {
         if (blueConnection)
@@ -254,6 +260,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    //Função para inicializar o camera shake
     public void CameraShake()
     {
         _shakeDuration = 0.2f;

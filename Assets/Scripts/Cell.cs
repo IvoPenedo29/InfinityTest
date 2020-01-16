@@ -13,6 +13,7 @@ public class Cell : MonoBehaviour
 
     void Awake()
     {
+        //Inicialização de variáveis
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boardManager = GetComponentInParent<BoardManager>();
     }
@@ -21,6 +22,7 @@ public class Cell : MonoBehaviour
     {
         _boardManager.mousePressed = true;
 
+        //Quando uma célula deteta que o mouse down verifica a sua cor e se for uma das células que possuem de facto cor então passam essa variável ao player
         if (isEmpty)
         {
             _boardManager.player.playerInk = colors.none;
@@ -31,45 +33,42 @@ public class Cell : MonoBehaviour
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.blue;
             _boardManager.startingCell = this;
-            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.red)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.red;
             _boardManager.startingCell = this;
-            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.green)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.green;
             _boardManager.startingCell = this;
-            //_boardManager.player.SetStartingCell(this);
         }
         else if (color == colors.yellow)
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.yellow;
             _boardManager.startingCell = this;
-            //_boardManager.player.SetStartingCell(this);
         }
         else
         {
             _boardManager.ResetCells(color);
             _boardManager.player.playerInk = colors.cyan;
             _boardManager.startingCell = this;
-            //_boardManager.player.SetStartingCell(this);
         }
     }
 
     void OnMouseUp()
     {
+        //Verificar se a célula na qual foi detetada o mouse up não é uma das células inicialmente pintadas e não sendo reiniciar as células que já foram pintadas com essa cor
         if (_boardManager.currentCell.isEmpty)
         {
             _boardManager.ResetCells(_boardManager.currentCell.color);
         }
 
+        //Reinicialização de variáveis
         _boardManager.player.playerInk = colors.none;
 
         _boardManager.previousCell = null;
@@ -82,6 +81,7 @@ public class Cell : MonoBehaviour
     {
         if (_boardManager.mousePressed)
         {
+            //Tocar o som cada vez que entra numa nova célula e aumentar o pitch do mesmo
             if (_boardManager.player.playerInk != colors.none)
             {
                 AudioManager.instance.Play("Marimba");
@@ -92,10 +92,10 @@ public class Cell : MonoBehaviour
                     AudioManager.instance.sounds[1].source.pitch = 3.0f;
             }            
 
+            //Definir a célula na qual o jogador se encontra
             _boardManager.currentCell = this;
 
-            //_boardManager.player.EnteredCell(this);
-
+            //Verificar se alguma conexão foi intersetada por outra e se for reinicializar as células da cor intersetada
             if (_boardManager.currentCell.color == colors.red && _boardManager.player.playerInk != _boardManager.currentCell.color && _boardManager.player.playerInk != colors.none)
             {
                 _boardManager.redConnection = false;
@@ -122,6 +122,7 @@ public class Cell : MonoBehaviour
                 _boardManager.ResetCells(colors.cyan);
             }
 
+            //Verificar se o jogador entrou numa das células iniciais que não sejam da mesma cor do jogador e se for reinicializar as células da cor atual do jogador
             if (!isEmpty && _boardManager.currentCell.color != _boardManager.player.playerInk)
             {
                 _boardManager.ResetCells(_boardManager.player.playerInk);
@@ -129,6 +130,7 @@ public class Cell : MonoBehaviour
                 return;
             }
 
+            //Verificar se o jogador está a entrar numa célula que já tenha sido pintada pela cor atual e se for reinicializar as células dessa cor
             if (color == _boardManager.player.playerInk && _boardManager.currentCell.isEmpty)
             {                
                 _boardManager.player.playerInk = colors.none;
@@ -136,6 +138,7 @@ public class Cell : MonoBehaviour
                 _boardManager.ResetCells(_boardManager.currentCell.color);
             }
 
+            //Verificar se o jogador conseguiu com sucesso fazer uma conexão e ligar as luzes e fazer o camera shake de acordo com o resultado
             if (_boardManager.currentCell != _boardManager.startingCell && !_boardManager.currentCell.isEmpty && _boardManager.currentCell.color == _boardManager.player.playerInk)
             {
                 if (_boardManager.player.playerInk == colors.red)
@@ -157,6 +160,7 @@ public class Cell : MonoBehaviour
                 _boardManager.CameraShake();
             }
 
+            //Pintar a célula na qual se entra da cor atual do jogador
             if (_boardManager.player.playerInk == colors.blue)
                 color = colors.blue;
             else if (_boardManager.player.playerInk == colors.red)
@@ -168,18 +172,21 @@ public class Cell : MonoBehaviour
             else if (_boardManager.player.playerInk == colors.cyan)
                 color = colors.cyan;
 
+            //Aplicar a troca de cores necessária
             SwitchColor();
         }
     }
 
     void OnMouseExit()
     {
+        //Detetar qual a célula de onde se saiu para guarda numa variável
         if(isEmpty && _boardManager.mousePressed && _boardManager.player.playerInk != colors.none)
             _boardManager.previousCell = this;        
     }
 
     public void SwitchColor()
     {
+        //Função para aplicar as cores necessárias a cada célula
         switch (color)
         {
             case colors.red:

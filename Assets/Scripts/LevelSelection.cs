@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class LevelSelection : MonoBehaviour
 {
     public Button[] levelButtons;
-
+    
     void Start()
     {
         int currentLevel = PlayerPrefs.GetInt("currentLevel", 0);
 
+        //Bloquear os níveis de acordo com o nível atual
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i > currentLevel)

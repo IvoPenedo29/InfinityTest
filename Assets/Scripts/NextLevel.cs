@@ -10,11 +10,13 @@ public class NextLevel : MonoBehaviour
 
     void Start()
     {
+        //Detetar qual o próximo nível
         nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     public void LoadNextLevel()
     {
+        //Verificar se o jogador está no último nível ou não, se estiver volta para o menu inicial, senão passa para o nível seguinte
         if (SceneManager.GetActiveScene().buildIndex == 11)
         {
             if (AudioManager.instance.IsPlaying("Victory FX"))
@@ -50,6 +52,7 @@ public class NextLevel : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        //Função para voltar para o menu principal
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
         {
             if (AudioManager.instance.IsPlaying("Victory FX"))

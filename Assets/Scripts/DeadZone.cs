@@ -13,6 +13,7 @@ public class DeadZone : MonoBehaviour
 
     void OnMouseEnter()
     {
+        //Se o jogador sair do tabuleiro reinicializar as variáveis para que não possa pintar mais
         _boardManager.mousePressed = false;
         _boardManager.player.playerInk = colors.none;        
     }

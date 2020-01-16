@@ -9,6 +9,7 @@ public class LocalizedText : MonoBehaviour
 
     void Start()
     {
+        //Atualizar o UI com o texto na língua correta
         Text text = GetComponent<Text>();
         text.text = LocalizationManager.instance.GetLocalizedValue(key);
     }

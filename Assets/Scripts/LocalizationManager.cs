@@ -26,6 +26,7 @@ public class LocalizationManager : MonoBehaviour
         localizedText = new Dictionary<string, string>();
         string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
 
+        //Detetar se o jogo está a ser jogado no android ou no iOS e ir buscar os ficheiros json nos dispositivos, senão ir buscar da maneira correta para a versão desktop
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
             WWW reader = new WWW(filePath);
@@ -59,6 +60,7 @@ public class LocalizationManager : MonoBehaviour
 
     public string GetLocalizedValue(string key)
     {
+        //Trocar os valores dos textos de acordo com a língua selecionada
         string result = _missingTextString;
         if (localizedText.ContainsKey(key))
             result = localizedText[key];
